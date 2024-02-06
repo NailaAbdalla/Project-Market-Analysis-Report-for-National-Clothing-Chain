@@ -108,28 +108,40 @@ NOTE: You'll need to use this data to calculate predicted customer incomes, and 
 It well explained in the classroom and it is very easy to follow steps, but for further information check this: https://iterationinsights.com/article/linear-regression-in-power-bi/ <br>
 ![reg](https://github.com/NailaAbdalla/Project-Market-Analysis-Report-for-National-Clothing-Chain/assets/151609042/fad10b6e-0f68-4cb3-b845-48d215c4b5bb)<br>
 
-1- Age categories (bins):<br>
+1- Age categories (bins):<br><br>
 `Age Category = IF([Customer Age]<20,20, IF([Customer Age]>=20 && [Customer Age]<30, 25,
 IF([Customer Age]>=30 && [Customer Age]<40, 35,
 IF([Customer Age]>=40 && [Customer Age]<50, 45,
 IF([Customer Age]>=50 && [Customer Age]<60, 55,
 IF([Customer Age]>=60 && [Customer Age]<70, 65,
 IF([Customer Age]>=70 && [Customer Age]<80, 75,
-IF([Customer Age]>=80 && [Customer Age]<90, 85,90))))))))`
-2- Find out the predicted income.<br>
-`predicted customer income = 72.43*[X]+72640.0` <br>
-3- creating bins for predicted customer's income.<br>
+IF([Customer Age]>=80 && [Customer Age]<90, 85,90))))))))` <br><br>
+2- Find out the predicted income.<br><br>
+`predicted customer income = 72.43*[X]+72640.0` <br><br>
+3- creating bins for predicted customer's income.<br><br>
 `Bin = IF([predicted customer income]>=110000,110000,
 IF([predicted customer income]<110000 &&[predicted customer income]>=100000,100000,
 IF([predicted customer income]<100000 &&[predicted customer income]>=90000,90000,
 IF([predicted customer income]<90000 &&[predicted customer income]>=80000,80000,
-IF([predicted customer income]<80000 &&[predicted customer income]>=70000,70000,0)))))` <br>
-4- Calculating Standard deviation for income; to helps us understand how spread out the data points are from the average.<br>
-stdv income = STDEV.P('Avg Income by State'[Average Income]) <br>
-5- use rules to find out the suggested products for each customers but I did it in tradioal way using bins. <br>
+IF([predicted customer income]<80000 &&[predicted customer income]>=70000,70000,0)))))` <br><br>
+4- Calculating Standard deviation for income; to helps us understand how spread out the data points are from the average.<br><br>
+`stdv income = STDEV.P('Avg Income by State'[Average Income])` <br><br>
+5- use rules to find out the suggested products for each customers but I did it in tradioal way using bins. <br><br><br>
 ![re6](https://github.com/NailaAbdalla/Project-Market-Analysis-Report-for-National-Clothing-Chain/assets/151609042/036d9525-9e90-4afc-abcf-7bf8d5b2b385)<br>
-# The Report Insights.
+# The Report Insights.<br><br>
 ![re1](https://github.com/NailaAbdalla/Project-Market-Analysis-Report-for-National-Clothing-Chain/assets/151609042/3cfb6f5b-1e5b-4ebe-bce5-70c6ef05050b)<br><br>
+![re2](https://github.com/NailaAbdalla/Project-Market-Analysis-Report-for-National-Clothing-Chain/assets/151609042/890cd213-c7a7-446c-93fa-8a205c8b7df9)<br><br>
+![re3](https://github.com/NailaAbdalla/Project-Market-Analysis-Report-for-National-Clothing-Chain/assets/151609042/78769cf8-3563-42d5-ad2c-acdbe2d3d72b)<br><br>
+![re4](https://github.com/NailaAbdalla/Project-Market-Analysis-Report-for-National-Clothing-Chain/assets/151609042/93800311-2c4c-4cbc-a62b-85cc1444effa)<br><br>
+![re5](https://github.com/NailaAbdalla/Project-Market-Analysis-Report-for-National-Clothing-Chain/assets/151609042/7d48e758-c906-4aa9-98af-0bcbbe9c291b)<br><br>
+# Important Notes:
+**Why do we use linear regression and created a regression table accordingly** <br> 
+1- Linear regression help us determine the strength between a dependent variable and a series of other independent variables.<br>
+2- Also help in creating models to make predictions, such as predicting a customer's income.<br>
+3- Further more, helps in predicting future outcomes or identifying the missing data.<br>
+4- lastly, spotting errors in a dataset, identifying or estimating the correct values.<br>
+Determine the strength of predictors, forecast an effect, and trend forecasting.
+
 
 
 
